@@ -1,0 +1,584 @@
+{
+  "split": "Test3",
+  "model": "qwen2.5:7b",
+  "mode": "context",
+  "budget": 0.1,
+  "n_escalated": 20,
+  "n_total": 2848,
+  "wall_clock_s": 115.6,
+  "n_cached": 0,
+  "records": [
+    {
+      "row_index": 388,
+      "sha256": "00963d29e25c3455fc35383c688e73d24beeaad0c3eb89f6fa88160ce85d6b00",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "WAKE_LOCK",
+        "WRITE_EXTERNAL_STORAGE",
+        "clock_gettime",
+        "clone",
+        "close"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "WAKE_LOCK",
+        "WRITE_EXTERNAL_STORAGE",
+        "clock_gettime",
+        "clone",
+        "close"
+      ],
+      "hallucinated": [],
+      "n_allowed": 33,
+      "egr": 1.0,
+      "reasoning": "The target application shares several artifacts with known malware, including `ACCESS_NETWORK_STATE`, `WAKE_LOCK`, and `WRITE_EXTERNAL_STORAGE`. These permissions are also present in the RogueLemon family of malware. Additionally, common system calls like `clock_gettime` and `clone` are observed, which are frequently used by malicious applications for persistence or other stealthy operations. The presence of these artifacts, combined with the high similarity to known malware families, outweighs the benign characteristics shared with some of the known apps.",
+      "latency_s": 5.42,
+      "eval_count": 161,
+      "prompt_eval_count": 863
+    },
+    {
+      "row_index": 1392,
+      "sha256": "6896f2092fd25d9f7d171f3a58403cf9543193ca8a1ae34b8820e35074aada2b",
+      "family": "Boogr",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_NETWORK_STATE",
+        "CALL_PHONE",
+        "INTERNET",
+        "RECEIVE_SMS",
+        "SEND_SMS"
+      ],
+      "grounded": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_NETWORK_STATE",
+        "CALL_PHONE",
+        "INTERNET",
+        "RECEIVE_SMS",
+        "SEND_SMS"
+      ],
+      "hallucinated": [],
+      "n_allowed": 32,
+      "egr": 1.0,
+      "reasoning": "The target application shares a high degree of similarity with the known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_FINE_LOCATION`, `ACCESS_NETWORK_STATE`, `CALL_PHONE`, `INTERNET`, `RECEIVE_SMS`, and `SEND_SMS` aligns closely with the behavior observed in the benign neighbors. Additionally, the target application's system call patterns (e.g., `clock_gettime`, `futex`, `ioctl`, etc.) are consistent with typical benign applications. Given that 0 out of 6 nearest known apps are malware, and considering the low prevalence of malware overall (10%), the evidence strongly suggests a benign classification.",
+      "latency_s": 7.19,
+      "eval_count": 202,
+      "prompt_eval_count": 827
+    },
+    {
+      "row_index": 2809,
+      "sha256": "8687d34f44c64b1ccd12e9c3967ce8ace4c1e03c9f906569f5fc1721ff645248",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "BLUETOOTH",
+        "CAMERA",
+        "CHANGE_NETWORK_STATE",
+        "CHANGE_WIFI_MULTICAST_STATE"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "BLUETOOTH",
+        "CAMERA",
+        "CHANGE_NETWORK_STATE",
+        "CHANGE_WIFI_MULTICAST_STATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 45,
+      "egr": 1.0,
+      "reasoning": "The target application shares several common permissions with the known benign applications, such as ACCESS_NETWORK_STATE, ACCESS_WIFI_STATE, BLUETOOTH, and CAMERA. These permissions are frequently found in legitimate apps and do not inherently indicate malicious intent. The target also requests similar services like CHANGE_NETWORK_STATE and CHANGE_WIFI_MULTICAST_STATE, which are present in multiple benign applications. While the target has a higher number of requested permissions compared to its neighbors, the nature of these permissions does not distinguish it as malware. Additionally, the syscall evidence includes common system calls that do not suggest malicious behavior on their own. The overall similarity score and the majority of known similar apps being benign further support this classification.",
+      "latency_s": 7.33,
+      "eval_count": 203,
+      "prompt_eval_count": 940
+    },
+    {
+      "row_index": 839,
+      "sha256": "687518d2ba223a2d10d1389f025ae45f36ab7e01c9a668e834e2437a578e7074",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "INSTALL_PACKAGES",
+        "INTERNET",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE",
+        "WAKE_LOCK"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "INSTALL_PACKAGES",
+        "INTERNET",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE",
+        "WAKE_LOCK"
+      ],
+      "hallucinated": [],
+      "n_allowed": 33,
+      "egr": 1.0,
+      "reasoning": "The target application shares a high degree of similarity with the known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INSTALL_PACKAGES`, `INTERNET`, `RECEIVE_BOOT_COMPLETED`, `VIBRATE`, and `WAKE_LOCK` is consistent with the behavior of typical benign applications. Additionally, the target application's system call patterns are not notably different from those observed in the known benign apps, further supporting a benign classification. Given that 0 out of 6 nearest known apps are malware, the evidence strongly suggests that this application is benign.",
+      "latency_s": 6.85,
+      "eval_count": 191,
+      "prompt_eval_count": 843
+    },
+    {
+      "row_index": 1093,
+      "sha256": "773ca5f111bb2587e98aaab13fc8fa3570edeb44a88cc44f0dae18b52b350928",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "BIND_AUTOFILL_SERVICE",
+        "CAMERA",
+        "INTERNET",
+        "READ_EXTERNAL_STORAGE",
+        "READ_PHONE_STATE",
+        "USE_BIOMETRIC"
+      ],
+      "grounded": [
+        "BIND_AUTOFILL_SERVICE",
+        "CAMERA",
+        "INTERNET",
+        "READ_EXTERNAL_STORAGE",
+        "READ_PHONE_STATE",
+        "USE_BIOMETRIC"
+      ],
+      "hallucinated": [],
+      "n_allowed": 33,
+      "egr": 1.0,
+      "reasoning": "The target application shares a high degree of similarity with the known benign applications, as evidenced by its permissions and system calls. Specifically, it requests common permissions such as `BIND_AUTOFILL_SERVICE`, `CAMERA`, `INTERNET`, `READ_EXTERNAL_STORAGE`, `READ_PHONE_STATE`, and `USE_BIOMETRIC`. These permissions are frequently found in legitimate applications and do not inherently indicate malicious intent. The system call patterns also align closely with those of the known benign apps, including frequent use of `clock_gettime` and `mmap2`. Given that 0 out of 6 nearest known apps are malware and the target application's artifacts are consistent with benign behavior, it is reasonable to classify this as a benign application.",
+      "latency_s": 7.12,
+      "eval_count": 213,
+      "prompt_eval_count": 856
+    },
+    {
+      "row_index": 2153,
+      "sha256": "e549446aebb7938988df739ab8053b2da5119ac7382ebd282ece53c60aa40291",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "BIND_TELECOM_CONNECTION_SERVICE",
+        "CAMERA",
+        "INTERNET",
+        "MODIFY_AUDIO_SETTINGS",
+        "READ_CALENDAR"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "BIND_TELECOM_CONNECTION_SERVICE",
+        "CAMERA",
+        "INTERNET",
+        "MODIFY_AUDIO_SETTINGS",
+        "READ_CALENDAR"
+      ],
+      "hallucinated": [],
+      "n_allowed": 38,
+      "egr": 1.0,
+      "reasoning": "The target application shares a high degree of similarity with the known benign applications, particularly in terms of permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `BIND_TELECOM_CONNECTION_SERVICE`, `CAMERA`, `INTERNET`, and `MODIFY_AUDIO_SETTINGS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `recvfrom`, and `write`, aligns closely with the known benign neighbors. The low number of dangerous permissions (4 out of 14) further supports a benign classification. Given that all six nearest known apps are benign and there is no evidence to suggest malicious intent, we can confidently classify this application as benign.",
+      "latency_s": 7.1,
+      "eval_count": 217,
+      "prompt_eval_count": 872
+    },
+    {
+      "row_index": 1597,
+      "sha256": "48492c8dc5ce23f03a121aef486cc57d3e16889ef1e584040e0903b4bf7b20f8",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_FINE_LOCATION",
+        "BLUETOOTH",
+        "CHANGE_NETWORK_STATE",
+        "CHANGE_WIFI_STATE",
+        "RECEIVE_BOOT_COMPLETED"
+      ],
+      "grounded": [
+        "ACCESS_FINE_LOCATION",
+        "BLUETOOTH",
+        "CHANGE_NETWORK_STATE",
+        "CHANGE_WIFI_STATE",
+        "RECEIVE_BOOT_COMPLETED"
+      ],
+      "hallucinated": [],
+      "n_allowed": 39,
+      "egr": 1.0,
+      "reasoning": "The target application's artifact list closely mirrors those of the known benign applications. Specifically, it requests permissions such as ACCESS_FINE_LOCATION, BLUETOOTH, CHANGE_NETWORK_STATE, and CHANGE_WIFI_STATE, which are common in benign applications. Additionally, the syscall usage patterns do not indicate any unusual or malicious behavior. The presence of RECEIVE_BOOT_COMPLETED is also typical for legitimate applications that need to initialize on startup. Given the low similarity score with malware (0 of 6 nearest known apps being malware), and the absence of highly suspicious artifacts, we can conclude that this application is likely benign.",
+      "latency_s": 6.05,
+      "eval_count": 179,
+      "prompt_eval_count": 907
+    },
+    {
+      "row_index": 2087,
+      "sha256": "965ce7acd76283ef29c5a3ce575dee0a9beb04afdaf28116831f9bca4e26ff9d",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "clock_gettime",
+        "clone"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "clock_gettime",
+        "clone"
+      ],
+      "hallucinated": [],
+      "n_allowed": 28,
+      "egr": 1.0,
+      "reasoning": "The target application shares a high degree of similarity with known benign applications, as evidenced by the presence of common permissions such as `ACCESS_NETWORK_STATE`, `ACCESS_WIFI_STATE`, and `INTERNET`. The syscall `clock_gettime` is also observed in multiple benign apps. Additionally, none of the requested permissions or observed syscalls are inherently dangerous or uncommon among benign applications. Given that 0 out of 6 nearest known apps are malware, and considering the low base rate of malware (10%), the target application aligns more closely with the characteristics of a benign app.",
+      "latency_s": 5.12,
+      "eval_count": 158,
+      "prompt_eval_count": 820
+    },
+    {
+      "row_index": 276,
+      "sha256": "7ae5547f998b44fd577a61fd8c4d83b82622aa34234824f59e77e91b9aeb03d8",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "clock_gettime",
+        "fstat64",
+        "getsockopt",
+        "gettimeofday",
+        "mmap2"
+      ],
+      "grounded": [
+        "clock_gettime",
+        "fstat64",
+        "getsockopt",
+        "gettimeofday",
+        "mmap2"
+      ],
+      "hallucinated": [],
+      "n_allowed": 29,
+      "egr": 1.0,
+      "reasoning": "The target application exhibits a high degree of similarity to the known benign applications, sharing common artifacts such as `clock_gettime`, `fstat64`, `getsockopt`, `gettimeofday`, and `mmap2`. These artifacts are also present in all six nearest known benign apps. The absence of dangerous permissions and the presence of common benign permissions like `ACCESS_NETWORK_STATE` and `INTERNET` further support a benign classification. Given that 100% of the closest neighbors are benign, and considering the low prevalence of malware (only about 10%), it is highly likely that the target application is also benign.",
+      "latency_s": 5.83,
+      "eval_count": 183,
+      "prompt_eval_count": 815
+    },
+    {
+      "row_index": 2464,
+      "sha256": "761977916bdfe4871c680c8067a23f88a3708cad55e5275bd35414f84e6e61d3",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "ACCESS_BACKGROUND_LOCATION",
+        "SYSTEM_ALERT_WINDOW"
+      ],
+      "grounded": [
+        "ACCESS_BACKGROUND_LOCATION",
+        "SYSTEM_ALERT_WINDOW"
+      ],
+      "hallucinated": [],
+      "n_allowed": 43,
+      "egr": 1.0,
+      "reasoning": "The target application requests ACCESS_BACKGROUND_LOCATION, which is a dangerous permission not commonly found in benign applications. Additionally, it requests SYSTEM_ALERT_WINDOW, a permission often associated with malware for displaying unauthorized notifications or overlays. These permissions are more aligned with the known malware apps (GinMaster, Kuguo, Dowgin) than the benign ones.",
+      "latency_s": 3.87,
+      "eval_count": 108,
+      "prompt_eval_count": 961
+    },
+    {
+      "row_index": 2311,
+      "sha256": "5ab83083d0409575d4e2b9b6366c2fef5b9ec7b1f56c8acc50600e5d85e05501",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "INTERNET",
+        "READ_EXTERNAL_STORAGE"
+      ],
+      "grounded": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "INTERNET",
+        "READ_EXTERNAL_STORAGE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 33,
+      "egr": 1.0,
+      "reasoning": "The target application shares several common permissions with the known malware apps, such as ACCESS_COARSE_LOCATION, ACCESS_FINE_LOCATION, ACCESS_NETWORK_STATE, ACCESS_WIFI_STATE, and INTERNET. These permissions are also present in some of the benign applications but do not alone indicate malice. However, the presence of READ_EXTERNAL_STORAGE is more commonly associated with malware families like Youmi, Wooboo, Robtes, and Adwo, which have a higher similarity score to the target application. Additionally, the high number of distinct system calls (1137) and the specific calls such as clock_gettime, ioctl, futex, etc., are also more commonly observed in malware samples compared to benign applications. Given that 4 out of 6 nearest known apps are malware and only 2 are benign, this further supports a classification of MALWARE for the target application.",
+      "latency_s": 7.42,
+      "eval_count": 237,
+      "prompt_eval_count": 875
+    },
+    {
+      "row_index": 974,
+      "sha256": "f8c22b2e08edbeee263aa900985c92e3701939c9f21336000d096541878e24ef",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "BIND_CHOOSER_TARGET_SERVICE",
+        "CALL_PHONE",
+        "INSTALL_PACKAGES",
+        "MANAGE_OWN_CALLS"
+      ],
+      "grounded": [
+        "BIND_CHOOSER_TARGET_SERVICE",
+        "CALL_PHONE",
+        "INSTALL_PACKAGES",
+        "MANAGE_OWN_CALLS"
+      ],
+      "hallucinated": [],
+      "n_allowed": 50,
+      "egr": 1.0,
+      "reasoning": "The target application shares several permissions and system calls with known malware, such as BIND_CHOOSER_TARGET_SERVICE, CALL_PHONE, INSTALL_PACKAGES, and MANAGE_OWN_CALLS. These permissions are not commonly found in benign applications and suggest the potential for malicious behavior. Additionally, the high number of dangerous permissions (11 out of 41) further supports this classification.",
+      "latency_s": 4.78,
+      "eval_count": 133,
+      "prompt_eval_count": 1003
+    },
+    {
+      "row_index": 1620,
+      "sha256": "073a922a98130d1bc2d433ce6806236c73bee46c05ce28efebf57b4707790861",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "CHANGE_WIFI_STATE",
+        "INTERNET",
+        "VIBRATE"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "CHANGE_WIFI_STATE",
+        "INTERNET",
+        "VIBRATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 45,
+      "egr": 1.0,
+      "reasoning": "The target application shares several common permissions and system calls with the known benign applications, such as ACCESS_NETWORK_STATE, CHANGE_WIFI_STATE, INTERNET, and VIBRATE. These permissions are frequently found in legitimate apps and do not inherently indicate malicious behavior. The target also has a higher similarity score to benign applications compared to malware, with only one of six nearest known apps being classified as malware. Additionally, the presence of less common permissions like BLUETOOTH, NFC, and USE_FINGERPRINT suggests that the application may be more complex or feature-rich but does not necessarily indicate malicious intent.",
+      "latency_s": 5.31,
+      "eval_count": 170,
+      "prompt_eval_count": 940
+    },
+    {
+      "row_index": 2787,
+      "sha256": "4b238c8c4cba85f3c93cb364f1d8a38c27333252e53286999555db9de0073677",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "BLUETOOTH",
+        "CALL_PHONE",
+        "CAMERA",
+        "CHANGE_WIFI_MULTICAST_STATE"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "BLUETOOTH",
+        "CALL_PHONE",
+        "CAMERA",
+        "CHANGE_WIFI_MULTICAST_STATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 50,
+      "egr": 1.0,
+      "reasoning": "The target application shares a high degree of similarity with the known benign applications, particularly in its use of permissions such as ACCESS_NETWORK_STATE, ACCESS_WIFI_STATE, BLUETOOTH, CALL_PHONE, CAMERA, and CHANGE_WIFI_MULTICAST_STATE. These permissions are commonly found in both the target and the known benign apps, and there is no evidence of dangerous or uncommon permissions that would suggest malicious intent. The syscall patterns observed do not indicate any unusual behavior that distinguishes it from the benign neighbors. Given the low base rate of malware (only 10% of applications) and the absence of distinguishing characteristics, the target application can be classified as benign.",
+      "latency_s": 6.17,
+      "eval_count": 196,
+      "prompt_eval_count": 974
+    },
+    {
+      "row_index": 980,
+      "sha256": "440632c81876de2ac318dff93eb7435e1bc5ba459979b240c150e0466ebab429",
+      "family": "BankBot",
+      "y_true": 1,
+      "llm_verdict": 1,
+      "cited": [
+        "BIND_ACCESSIBILITY_SERVICE",
+        "BIND_DEVICE_ADMIN",
+        "BROADCAST_SMS",
+        "BROADCAST_WAP_PUSH",
+        "CALL_PHONE",
+        "CHANGE_WIFI_STATE"
+      ],
+      "grounded": [
+        "BIND_ACCESSIBILITY_SERVICE",
+        "BIND_DEVICE_ADMIN",
+        "BROADCAST_SMS",
+        "BROADCAST_WAP_PUSH",
+        "CALL_PHONE",
+        "CHANGE_WIFI_STATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 44,
+      "egr": 1.0,
+      "reasoning": "The target application shares several dangerous permissions and system calls with the known malware apps, including BIND_ACCESSIBILITY_SERVICE, BIND_DEVICE_ADMIN, BROADCAST_SMS, BROADCAST_WAP_PUSH, CALL_PHONE, and CHANGE_WIFI_STATE. These permissions are not commonly found in benign applications and can be used to gain unauthorized access or control over the device. Additionally, the high number of distinct system calls (3469) further supports the likelihood that this application is malicious.",
+      "latency_s": 5.53,
+      "eval_count": 158,
+      "prompt_eval_count": 920
+    },
+    {
+      "row_index": 775,
+      "sha256": "ec4826f7d0cdca1990c1312eb4903d457bee1c2dcd4bb0bd10d89d2674f9dc1c",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "clock_gettime",
+        "futex",
+        "getuid32",
+        "pread",
+        "write",
+        "mmap2"
+      ],
+      "grounded": [
+        "clock_gettime",
+        "futex",
+        "getuid32",
+        "pread",
+        "write",
+        "mmap2"
+      ],
+      "hallucinated": [],
+      "n_allowed": 29,
+      "egr": 1.0,
+      "reasoning": "The target application exhibits a high degree of similarity to the known benign applications, sharing common system calls such as `clock_gettime`, `futex`, and `pread`. These artifacts are also present in all six nearest known benign apps. The lack of dangerous permissions and the presence of common benign permissions like `ACCESS_NETWORK_STATE` and `INTERNET` further support a benign classification. Given that 100% of the closest neighbors are benign, and considering the low prevalence of malware (only 10%), it is highly likely that the target application is also benign.",
+      "latency_s": 4.51,
+      "eval_count": 174,
+      "prompt_eval_count": 815
+    },
+    {
+      "row_index": 1515,
+      "sha256": "1088d5471b5344a14541f5954f8cc97f45b5614bd5b31b5a8c0838a9a8a20d6a",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "CHANGE_WIFI_STATE",
+        "INTERNET",
+        "VIBRATE"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "CHANGE_WIFI_STATE",
+        "INTERNET",
+        "VIBRATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 44,
+      "egr": 1.0,
+      "reasoning": "The target application shares several common permissions and system calls with the known benign applications, such as ACCESS_NETWORK_STATE, CHANGE_WIFI_STATE, INTERNET, and VIBRATE. These permissions are frequently found in legitimate applications and do not inherently indicate malicious behavior. The majority of the closest known apps (5 out of 6) are benign, further supporting a benign classification for the target application.",
+      "latency_s": 4.26,
+      "eval_count": 129,
+      "prompt_eval_count": 936
+    },
+    {
+      "row_index": 1724,
+      "sha256": "ac1b45b3faed83784776b4826d5d698355af34bc2c18d0ef18db1c0b8b8db665",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "INTERNET",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "INTERNET",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 27,
+      "egr": 1.0,
+      "reasoning": "The target application shares a high degree of similarity with known benign applications, as evidenced by the presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, and `WRITE_EXTERNAL_STORAGE`. The syscall patterns observed in the target also align closely with those seen in the benign neighbors, including frequent use of `clock_gettime`, `futex`, and `write` syscalls. Given that 0 out of 6 nearest known apps are malware and the large majority of applications in this population are benign (90%), the target application is best classified as benign.",
+      "latency_s": 5.85,
+      "eval_count": 159,
+      "prompt_eval_count": 812
+    },
+    {
+      "row_index": 369,
+      "sha256": "b4fdbbaf2076c7a2e4a69aa1079e39e53c9b13dc7baf2f62ede6c5de0ff1a4ec",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "clock_gettime",
+        "fstat64",
+        "getsockopt",
+        "gettimeofday"
+      ],
+      "grounded": [
+        "clock_gettime",
+        "fstat64",
+        "getsockopt",
+        "gettimeofday"
+      ],
+      "hallucinated": [],
+      "n_allowed": 29,
+      "egr": 1.0,
+      "reasoning": "The target application exhibits a high degree of similarity to the known benign applications, sharing common artifacts such as `clock_gettime`, `fstat64`, and `getsockopt`. These artifacts are also present in all six nearest known benign apps. The absence of dangerous permissions and the presence of common benign permissions like `ACCESS_NETWORK_STATE` and `INTERNET` further support a benign classification. Given that 100% of the closest neighbors are benign, and considering the low prevalence of malware (only 10%), it is highly likely that this application is also benign.",
+      "latency_s": 4.42,
+      "eval_count": 166,
+      "prompt_eval_count": 815
+    },
+    {
+      "row_index": 787,
+      "sha256": "650510c034886f16da81efc14f6a48605bda681c814c60a1787fc6a3d2376320",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "CHANGE_WIFI_STATE",
+        "INTERNET",
+        "VIBRATE"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "CHANGE_WIFI_STATE",
+        "INTERNET",
+        "VIBRATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 45,
+      "egr": 1.0,
+      "reasoning": "The target application shares several common permissions and system calls with the known benign applications, such as ACCESS_NETWORK_STATE, CHANGE_WIFI_STATE, INTERNET, and VIBRATE. These permissions are frequently found in legitimate apps and do not inherently indicate malicious behavior. The target also has a higher similarity score to benign applications compared to malware, with only one of six nearest known apps being classified as malware. Additionally, the presence of less common permissions like BLUETOOTH, NFC, and USE_FINGERPRINT suggests that the application may be more complex or feature-rich but does not necessarily indicate malicious intent.",
+      "latency_s": 4.58,
+      "eval_count": 170,
+      "prompt_eval_count": 940
+    }
+  ],
+  "llm_only_on_escalated": {
+    "n": 20,
+    "accuracy": 80.0,
+    "precision": 20.0,
+    "recall": 100.0,
+    "f1": 33.333333333333336,
+    "fpr": 21.05263157894737,
+    "fnr": 0.0,
+    "tp": 1,
+    "tn": 15,
+    "fp": 4,
+    "fn": 0
+  },
+  "mean_egr": 1.0,
+  "fully_grounded_rate": 1.0,
+  "mean_latency_s": 5.7355
+}

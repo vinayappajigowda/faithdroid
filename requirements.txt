@@ -1,0 +1,16 @@
+# FAITHDROID - Python dependencies
+# Versions are those used for the reported results; later minor versions should work.
+pandas==2.3.3
+numpy==2.4.6
+scikit-learn==1.5.1
+xgboost==3.2.0
+shap==0.52.0
+scipy==1.18.0
+matplotlib==3.10.6
+pyarrow==21.0.0
+
+# The LLM stage talks to a local Ollama server over HTTP using only the standard
+# library, so there is no Python client dependency. Install Ollama separately and pull:
+#   ollama pull qwen2.5:7b      (primary reasoning model)
+#   ollama pull llama3.2:3b     (model-capacity sweep)
+#   ollama pull phi4:14b        (model-capacity sweep)

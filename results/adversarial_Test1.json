@@ -1,0 +1,818 @@
+{
+  "split": "Test1",
+  "n_attacked": 121,
+  "budgets": {
+    "1": {
+      "evaded": 6,
+      "n": 121,
+      "evasion_rate": 0.049586776859504134,
+      "mean_proba": 0.9149515628814697
+    },
+    "2": {
+      "evaded": 12,
+      "n": 121,
+      "evasion_rate": 0.09917355371900827,
+      "mean_proba": 0.8578367829322815
+    },
+    "5": {
+      "evaded": 34,
+      "n": 121,
+      "evasion_rate": 0.2809917355371901,
+      "mean_proba": 0.6986136436462402
+    },
+    "10": {
+      "evaded": 47,
+      "n": 121,
+      "evasion_rate": 0.3884297520661157,
+      "mean_proba": 0.6174679398536682
+    },
+    "20": {
+      "evaded": 56,
+      "n": 121,
+      "evasion_rate": 0.4628099173553719,
+      "mean_proba": 0.5273779630661011
+    },
+    "40": {
+      "evaded": 71,
+      "n": 121,
+      "evasion_rate": 0.5867768595041323,
+      "mean_proba": 0.44455891847610474
+    }
+  },
+  "llm": {
+    "attack_budget": 5,
+    "n_tested": 34,
+    "llm_fooled": 21,
+    "llm_fooled_rate": 0.6176470588235294,
+    "llm_caught": 13,
+    "mean_egr": 0.9166666666666666,
+    "mean_egr_when_fooled": 1.0,
+    "mean_egr_when_caught": 0.782051282051282,
+    "explanations_citing_injected": 19,
+    "records": [
+      {
+        "row_index": 58,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "KILL_BACKGROUND_PROCESSES",
+          "MODIFY_AUDIO_SETTINGS",
+          "SYSTEM_ALERT_WINDOW"
+        ],
+        "grounded": [],
+        "egr": 0.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares several artifacts with known malware, including BIND_DEVICE_ADMIN, CALL_PHONE, KILL_BACKGROUND_PROCESSES, MODIFY_AUDIO_SETTINGS, and SYSTEM_ALERT_WINDOW. These permissions are not commonly found in benign applications from the provided dataset. The presence of these permissions, combined with a similarity score that is closer to the malware apps (0.50) than the benign ones (0.48), strongly suggests that the target application is likely malicious."
+      },
+      {
+        "row_index": 73,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "clock_gettime",
+          "futex",
+          "mmap2",
+          "recvfrom"
+        ],
+        "grounded": [
+          "clock_gettime",
+          "futex",
+          "mmap2",
+          "recvfrom"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares several key artifacts with known malware families, including `clock_gettime`, `futex`, and network-related system calls like `recvfrom`. These artifacts are not commonly found in benign applications and align closely with the behavior of the identified malware families. The presence of `mmap2` also suggests potential malicious activity related to memory manipulation. Given that all six nearest known apps are malware, this strong similarity provides a high confidence level for classifying the target as malware."
+      },
+      {
+        "row_index": 114,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "KILL_BACKGROUND_PROCESSES",
+          "MODIFY_AUDIO_SETTINGS",
+          "SYSTEM_ALERT_WINDOW"
+        ],
+        "grounded": [],
+        "egr": 0.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares several artifacts with known malware, including BIND_DEVICE_ADMIN, CALL_PHONE, KILL_BACKGROUND_PROCESSES, MODIFY_AUDIO_SETTINGS, and SYSTEM_ALERT_WINDOW. These permissions are not commonly found in benign applications from the provided dataset. The presence of these permissions, combined with a similarity score that is closer to the malware apps (0.50) than the benign ones (0.48), strongly suggests that the target application is likely malicious."
+      },
+      {
+        "row_index": 150,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "clock_gettime",
+          "clone"
+        ],
+        "grounded": [
+          "clock_gettime",
+          "clone"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known malware, particularly in the presence of `clock_gettime` and `clone`. These system calls are not commonly found in benign applications and are more frequently associated with malicious behavior. The combination of these specific artifacts, along with the overall profile that closely matches two out of six known malware samples, strongly suggests a high likelihood of the target being malware."
+      },
+      {
+        "row_index": 232,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "READ_PHONE_STATE",
+          "WRITE_EXTERNAL_STORAGE",
+          "clock_gettime",
+          "clone",
+          "close",
+          "epoll_ctl"
+        ],
+        "grounded": [
+          "READ_PHONE_STATE",
+          "WRITE_EXTERNAL_STORAGE",
+          "clock_gettime",
+          "clone",
+          "close",
+          "epoll_ctl"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with the known benign applications, particularly in its use of common permissions such as READ_PHONE_STATE and WRITE_EXTERNAL_STORAGE. The syscall evidence also aligns closely with the benign neighbors, including clock_gettime, clone, close, and epoll_ctl. These artifacts are consistent with typical benign behavior observed in the known apps. Given that 0 out of 6 nearest known apps are malware and the target application's permissions and syscalls do not indicate any distinguishing malicious activity, it is reasonable to classify this as a benign application."
+      },
+      {
+        "row_index": 266,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "BIND_DEVICE_ADMIN",
+          "INSTALL_PACKAGES",
+          "PROCESS_OUTGOING_CALLS",
+          "READ_CALENDAR",
+          "WRITE_EXTERNAL_STORAGE"
+        ],
+        "grounded": [
+          "BIND_DEVICE_ADMIN",
+          "INSTALL_PACKAGES",
+          "PROCESS_OUTGOING_CALLS",
+          "READ_CALENDAR",
+          "WRITE_EXTERNAL_STORAGE"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "READ_CALENDAR"
+        ],
+        "reasoning": "The target application shares several common permissions with the known benign applications, such as BIND_DEVICE_ADMIN, INSTALL_PACKAGES, PROCESS_OUTGOING_CALLS, READ_CALENDAR, and WRITE_EXTERNAL_STORAGE. These permissions are frequently found in legitimate applications and do not inherently indicate malicious behavior. Additionally, the target application's syscall patterns (e.g., mprotect, clock_gettime) are similar to those observed in benign applications. Given that 100% of the closest known apps are benign, and considering the low base rate of malware in this population, it is reasonable to classify the target as benign."
+      },
+      {
+        "row_index": 270,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "GET_TASKS",
+          "READ_LOGS",
+          "SYSTEM_ALERT_WINDOW"
+        ],
+        "grounded": [
+          "GET_TASKS",
+          "READ_LOGS"
+        ],
+        "egr": 0.6666666666666666,
+        "cited_injected": [],
+        "reasoning": "The target application shares several artifacts with known malware, including GET_TASKS and SYSTEM_ALERT_WINDOW. These permissions are not commonly found in benign applications from the provided dataset. Additionally, the presence of READ_LOGS suggests potential unauthorized access to system logs, which is a common behavior for malicious software. The high similarity score to Airpush/StopSMS (0.60) further supports this classification."
+      },
+      {
+        "row_index": 392,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "clock_gettime",
+          "clone"
+        ],
+        "grounded": [
+          "clock_gettime",
+          "clone"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known malware, particularly in the presence of `clock_gettime` and `clone`. These system calls are not commonly found in benign applications and are more frequently associated with malicious behavior. The combination of these specific artifacts, along with the overall profile that closely matches two out of six known malware samples, strongly suggests a high likelihood of the target being malware."
+      },
+      {
+        "row_index": 473,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_COARSE_LOCATION",
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET"
+        ],
+        "grounded": [
+          "ACCESS_COARSE_LOCATION",
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD"
+        ],
+        "reasoning": "The target application shares a high degree of similarity with the known benign applications, particularly in its use of common permissions such as ACCESS_COARSE_LOCATION, BIND_DEVICE_ADMIN, CALL_PHONE, DISABLE_KEYGUARD, GET_TASKS, and INTERNET. These permissions are also present in multiple benign apps listed above. The syscall evidence does not indicate any unusual or malicious behavior; instead, it includes a mix of system calls that are commonly used by legitimate applications for various purposes. Given the low base rate of malware (only 10% of applications) and the absence of distinctly harmful artifacts, the target application is best classified as benign."
+      },
+      {
+        "row_index": 550,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "DISABLE_KEYGUARD",
+          "WRITE_EXTERNAL_STORAGE"
+        ],
+        "grounded": [
+          "DISABLE_KEYGUARD",
+          "WRITE_EXTERNAL_STORAGE"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD"
+        ],
+        "reasoning": "The target application requests the `DISABLE_KEYGUARD` permission, which is commonly associated with malicious applications that aim to disable security features on a device. Additionally, it requests `WRITE_EXTERNAL_STORAGE`, a dangerous permission often used by ransomware and other malware to modify or delete files on the user's storage. These permissions are not present in any of the benign neighbors provided, making them strong indicators of potential malice. The syscall evidence also includes `clock_gettime` and `mprotect`, which can be indicative of malicious behavior but do not distinguish this target from the known benign applications as effectively as the permissions do."
+      },
+      {
+        "row_index": 560,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET",
+          "MODIFY_PHONE_STATE"
+        ],
+        "grounded": [
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET",
+          "MODIFY_PHONE_STATE"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD",
+          "MODIFY_PHONE_STATE"
+        ],
+        "reasoning": "The target application shares several common permissions and system calls with the known benign applications, such as BIND_DEVICE_ADMIN, CALL_PHONE, DISABLE_KEYGUARD, GET_TASKS, INTERNET, and MODIFY_PHONE_STATE. These artifacts are also present in multiple of the most similar known apps, which have been labeled as benign. The presence of these permissions does not inherently indicate malice, especially given the high base rate of benign applications. Additionally, the target application lacks some of the more suspicious permissions seen in the malware examples, such as RESTART_PACKAGES and SYSTEM_ALERT_WINDOW, which are present in the AnServer/Answerbot family. While there is a mix of permissions that could be concerning, the overall profile aligns more closely with known benign applications based on the provided data."
+      },
+      {
+        "row_index": 575,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "GET_TASKS",
+          "KILL_BACKGROUND_PROCESSES",
+          "RECEIVE_BOOT_COMPLETED",
+          "SYSTEM_ALERT_WINDOW",
+          "clock_gettime"
+        ],
+        "grounded": [
+          "GET_TASKS",
+          "KILL_BACKGROUND_PROCESSES",
+          "RECEIVE_BOOT_COMPLETED",
+          "SYSTEM_ALERT_WINDOW",
+          "clock_gettime"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares several key artifacts with the known malware apps, including GET_TASKS, KILL_BACKGROUND_PROCESSES, RECEIVE_BOOT_COMPLETED, SYSTEM_ALERT_WINDOW, and clock_gettime. These permissions and system calls are indicative of malicious behavior, such as unauthorized access to tasks and background processes, receiving boot completion events, and manipulating system alerts. The high similarity score with the known malware family (Locker/SLocker Ransomware) further supports this conclusion. Given that 100% of the nearest known apps are labeled as malware, the likelihood of the target being benign is extremely low."
+      },
+      {
+        "row_index": 613,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "CALL_PHONE",
+          "GET_TASKS",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "CALL_PHONE",
+          "GET_TASKS",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares several common permissions and system calls with the known benign applications, such as ACCESS_NETWORK_STATE, CALL_PHONE, GET_TASKS, INTERNET, READ_PHONE_STATE, and READ_SMS. These artifacts are also present in multiple benign apps from the ground-truth labels provided. The presence of these artifacts does not indicate malice on their own, especially given the high base rate of benign applications (90%). Furthermore, the target application lacks the more dangerous permissions and system calls that were observed in the malware samples, such as INSTALL_PACKAGES, MODIFY_PHONE_STATE, SEND_SMS, WAKE_LOCK, WRITE_SETTINGS, and clock_gettime. The overall artifact profile is closer to the known benign apps than the malware ones."
+      },
+      {
+        "row_index": 650,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "BIND_DEVICE_ADMIN",
+          "GET_TASKS",
+          "READ_CONTACTS",
+          "RECEIVE_BOOT_COMPLETED",
+          "SEND_SMS"
+        ],
+        "grounded": [
+          "BIND_DEVICE_ADMIN",
+          "GET_TASKS",
+          "READ_CONTACTS",
+          "RECEIVE_BOOT_COMPLETED",
+          "SEND_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "READ_CONTACTS"
+        ],
+        "reasoning": "The target application shares several common permissions and artifacts with the known benign applications, such as BIND_DEVICE_ADMIN, GET_TASKS, READ_CONTACTS, RECEIVE_BOOT_COMPLETED, and SEND_SMS. These permissions are frequently found in legitimate applications and do not inherently indicate malicious behavior. The target also has a lower similarity score compared to the malware apps (0.74 vs 0.79 for benign), which further supports its classification as benign. While some potentially sensitive permissions like MODIFY_PHONE_STATE and SYSTEM_ALERT_WINDOW are requested, they are not unique to the known malware samples and can be found in many legitimate applications."
+      },
+      {
+        "row_index": 768,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "BATTERY_STATS",
+          "KILL_BACKGROUND_PROCESSES",
+          "MODIFY_PHONE_STATE",
+          "READ_LOGS"
+        ],
+        "grounded": [
+          "BATTERY_STATS",
+          "KILL_BACKGROUND_PROCESSES",
+          "MODIFY_PHONE_STATE",
+          "READ_LOGS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "MODIFY_PHONE_STATE"
+        ],
+        "reasoning": "The target application shares several artifacts with the known malware apps, such as BATTERY_STATS and KILL_BACKGROUND_PROCESSES. These permissions are not present in any of the benign applications listed. Additionally, the presence of MODIFY_PHONE_STATE and READ_LOGS further distinguishes it from the benign neighbors. The high similarity to multiple malware families also supports this classification."
+      },
+      {
+        "row_index": 787,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "BIND_DEVICE_ADMIN",
+          "GET_TASKS",
+          "READ_CONTACTS",
+          "RECEIVE_BOOT_COMPLETED",
+          "SEND_SMS"
+        ],
+        "grounded": [
+          "BIND_DEVICE_ADMIN",
+          "GET_TASKS",
+          "READ_CONTACTS",
+          "RECEIVE_BOOT_COMPLETED",
+          "SEND_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "READ_CONTACTS"
+        ],
+        "reasoning": "The target application shares several common permissions and artifacts with the known benign applications, such as BIND_DEVICE_ADMIN, GET_TASKS, READ_CONTACTS, RECEIVE_BOOT_COMPLETED, and SEND_SMS. These permissions are frequently found in legitimate applications and do not inherently indicate malicious behavior. The target also has a lower similarity score compared to the malware apps (0.74 vs 0.79 for benign), which further supports its classification as benign. While some potentially sensitive permissions like MODIFY_PHONE_STATE and SYSTEM_ALERT_WINDOW are requested, they are not unique to the known malware samples and can be found in many legitimate applications."
+      },
+      {
+        "row_index": 793,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "INTERNET",
+          "WRITE_EXTERNAL_STORAGE"
+        ],
+        "grounded": [
+          "INTERNET",
+          "WRITE_EXTERNAL_STORAGE"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, as evidenced by its permissions and system call usage. Specifically, the presence of common permissions such as `INTERNET` and `WRITE_EXTERNAL_STORAGE`, which are also found in all six nearest known benign apps, suggests that this application is likely benign. The system calls observed, including `clock_gettime`, `recvfrom`, and `write`, are frequently used by legitimate applications for standard operations like network communication and file I/O. There are no dangerous permissions or highly suspicious system calls that would indicate malicious behavior."
+      },
+      {
+        "row_index": 815,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "MODIFY_PHONE_STATE",
+          "READ_CONTACTS"
+        ],
+        "grounded": [
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "MODIFY_PHONE_STATE",
+          "READ_CONTACTS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD",
+          "MODIFY_PHONE_STATE",
+          "READ_CONTACTS"
+        ],
+        "reasoning": "The target application shares several key permissions and system calls with the known malware apps, such as BIND_DEVICE_ADMIN, CALL_PHONE, DISABLE_KEYGUARD, GET_TASKS, MODIFY_PHONE_STATE, and READ_CONTACTS. These permissions are not present in any of the benign applications listed, making them strong indicators of potential malicious intent. Additionally, the high similarity scores to known malware families (BankBot and BackFlash/Crosate) further support this classification."
+      },
+      {
+        "row_index": 849,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "ACCESS_WIFI_STATE",
+          "INTERNET",
+          "READ_CONTACTS",
+          "VIBRATE",
+          "WAKE_LOCK"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "ACCESS_WIFI_STATE",
+          "INTERNET",
+          "READ_CONTACTS",
+          "VIBRATE",
+          "WAKE_LOCK"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "READ_CONTACTS"
+        ],
+        "reasoning": "The target application shares a high degree of similarity with the known benign applications, particularly in its use of common permissions such as ACCESS_NETWORK_STATE, ACCESS_WIFI_STATE, INTERNET, READ_CONTACTS, VIBRATE, and WAKE_LOCK. These permissions are also present in multiple benign neighbors, making them less indicative of malicious behavior on their own. The target application does not exhibit any dangerous or uncommon permissions or system calls that distinguish it from the known benign applications. Given the low base rate of malware (only 10% of applications) and the absence of distinguishing features, the target is more likely to be benign."
+      },
+      {
+        "row_index": 899,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET",
+          "MODIFY_PHONE_STATE"
+        ],
+        "grounded": [
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET",
+          "MODIFY_PHONE_STATE"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD",
+          "MODIFY_PHONE_STATE"
+        ],
+        "reasoning": "The target application shares several common permissions and system calls with the known benign applications, such as BIND_DEVICE_ADMIN, CALL_PHONE, DISABLE_KEYGUARD, GET_TASKS, INTERNET, and MODIFY_PHONE_STATE. These artifacts are also present in multiple of the most similar known apps. The presence of these permissions does not inherently indicate malice, especially given the high base rate of benign applications. Additionally, the target application lacks some of the more suspicious permissions seen in the single malware example (such as RECEIVE_BOOT_COMPLETED, RECEIVE_SMS, SEND_SMS) and has a lower similarity score compared to the known benign apps."
+      },
+      {
+        "row_index": 961,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_COARSE_LOCATION",
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET"
+        ],
+        "grounded": [
+          "ACCESS_COARSE_LOCATION",
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD"
+        ],
+        "reasoning": "The target application shares a high degree of similarity with the known benign applications, particularly in its use of common permissions such as ACCESS_COARSE_LOCATION, BIND_DEVICE_ADMIN, CALL_PHONE, DISABLE_KEYGUARD, GET_TASKS, and INTERNET. These permissions are also present in multiple benign apps listed above. The syscall evidence does not indicate any suspicious activity; instead, it includes a mix of system calls that are commonly used by legitimate applications for various purposes. Given the low base rate of malware (only 10% of applications) and the absence of distinctly malicious artifacts, the target application is best classified as benign."
+      },
+      {
+        "row_index": 1033,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_COARSE_LOCATION",
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET"
+        ],
+        "grounded": [
+          "ACCESS_COARSE_LOCATION",
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD"
+        ],
+        "reasoning": "The target application shares several common permissions with the known benign applications, such as ACCESS_COARSE_LOCATION, BIND_DEVICE_ADMIN, CALL_PHONE, DISABLE_KEYGUARD, GET_TASKS, and INTERNET. These permissions are frequently found in legitimate apps and do not inherently indicate malicious behavior. The syscall evidence also does not show any particularly alarming patterns that distinguish it from the benign neighbors. Given the low base rate of malware (10%) and the similarity to known benign applications, we can conclude with a high degree of confidence that this application is benign."
+      },
+      {
+        "row_index": 1034,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "GET_TASKS",
+          "SYSTEM_ALERT_WINDOW",
+          "clock_gettime",
+          "clone"
+        ],
+        "grounded": [
+          "GET_TASKS",
+          "clock_gettime",
+          "clone"
+        ],
+        "egr": 0.75,
+        "cited_injected": [],
+        "reasoning": "The target application shares several artifacts with known malware, including GET_TASKS and SYSTEM_ALERT_WINDOW. Additionally, the frequent use of system calls like clock_gettime and clone is indicative of more complex and potentially malicious behavior. While some permissions are common in benign applications, the combination of these specific artifacts and system calls distinguishes the target from the majority of benign apps in the known set."
+      },
+      {
+        "row_index": 1123,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_FINE_LOCATION",
+          "CHANGE_WIFI_STATE",
+          "INTERNET",
+          "READ_CONTACTS",
+          "READ_PHONE_STATE",
+          "SEND_SMS"
+        ],
+        "grounded": [
+          "ACCESS_FINE_LOCATION",
+          "CHANGE_WIFI_STATE",
+          "INTERNET",
+          "READ_CONTACTS",
+          "READ_PHONE_STATE",
+          "SEND_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "READ_CONTACTS"
+        ],
+        "reasoning": "The target application shares several common permissions with the known benign applications, such as ACCESS_FINE_LOCATION, CHANGE_WIFI_STATE, INTERNET, READ_CONTACTS, and READ_PHONE_STATE. These permissions are frequently found in legitimate apps and do not inherently indicate malicious behavior. The target also has the ability to send SMS messages (SEND_SMS), which is a feature that some benign applications may require for functionality. While it requests more dangerous permissions like MODIFY_PHONE_STATE and WRITE_SETTINGS, these are not as prevalent among the known benign applications compared to the malware ones. Additionally, the syscall evidence does not point towards any suspicious activity; clock_gettime, getuid32, read, and ioctl are common syscalls that do not distinguish this application from typical benign apps. Given the base rate of only 10% being malware and the similarity scores with known benign applications, it is more likely that the target application is benign."
+      },
+      {
+        "row_index": 1135,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "BIND_DEVICE_ADMIN",
+          "GET_TASKS",
+          "READ_CONTACTS",
+          "RECEIVE_BOOT_COMPLETED",
+          "SEND_SMS"
+        ],
+        "grounded": [
+          "BIND_DEVICE_ADMIN",
+          "GET_TASKS",
+          "READ_CONTACTS",
+          "RECEIVE_BOOT_COMPLETED",
+          "SEND_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "READ_CONTACTS"
+        ],
+        "reasoning": "The target application shares several common permissions and artifacts with the known benign applications, such as BIND_DEVICE_ADMIN, GET_TASKS, READ_CONTACTS, RECEIVE_BOOT_COMPLETED, and SEND_SMS. These permissions are frequently found in legitimate applications and do not inherently indicate malicious behavior. The target also has a lower similarity score compared to the malware apps (0.74 vs 0.79 for benign), which further supports its classification as benign. While some potentially sensitive permissions like MODIFY_PHONE_STATE and SYSTEM_ALERT_WINDOW are requested, they are not unique to the known malware samples and can be found in many legitimate applications."
+      },
+      {
+        "row_index": 1170,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_ACCOUNTS",
+          "INTERNET"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_ACCOUNTS",
+          "INTERNET"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD"
+        ],
+        "reasoning": "The target application shares several common permissions with the known benign applications, such as ACCESS_NETWORK_STATE, CALL_PHONE, DISABLE_KEYGUARD, GET_ACCOUNTS, and INTERNET. These permissions are frequently found in legitimate apps and do not inherently indicate malicious behavior. The target also requests BIND_DEVICE_ADMIN, which is a permission that can be used for device management but is not unique to malware. Additionally, the syscall patterns observed (e.g., write, clock_gettime) are common and do not suggest any unusual or suspicious activity. Given the low similarity score with known malware and the high number of benign neighbors, it is more likely that this application is benign."
+      },
+      {
+        "row_index": 1196,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "MODIFY_PHONE_STATE",
+          "READ_CONTACTS"
+        ],
+        "grounded": [
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "MODIFY_PHONE_STATE",
+          "READ_CONTACTS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD",
+          "MODIFY_PHONE_STATE",
+          "READ_CONTACTS"
+        ],
+        "reasoning": "The target application shares several key permissions and system calls with the known malware apps, such as BIND_DEVICE_ADMIN, CALL_PHONE, DISABLE_KEYGUARD, GET_TASKS, MODIFY_PHONE_STATE, and READ_CONTACTS. These permissions are not present in any of the benign applications listed, making them strong indicators of potential malicious intent. Additionally, the high similarity scores to known malware families (BankBot and BackFlash/Crosate) further support this classification."
+      },
+      {
+        "row_index": 1269,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "clock_gettime",
+          "clone"
+        ],
+        "grounded": [
+          "clock_gettime",
+          "clone"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares several common permissions and system calls with known benign applications, such as `clock_gettime` and `clone`. These artifacts are also present in multiple benign neighbors. The presence of `DISABLE_KEYGUARD`, `MODIFY_PHONE_STATE`, and `READ_EXTERNAL_STORAGE` does not necessarily indicate malice on its own, given the high prevalence of these permissions among benign apps. Furthermore, the target application has a lower similarity score compared to the malware sample (0.67 vs 1.0), and only one out of six nearest known applications is malware. The overall artifact profile aligns more closely with the majority of benign applications in this dataset."
+      },
+      {
+        "row_index": 1307,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_COARSE_LOCATION",
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET"
+        ],
+        "grounded": [
+          "ACCESS_COARSE_LOCATION",
+          "BIND_DEVICE_ADMIN",
+          "CALL_PHONE",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD"
+        ],
+        "reasoning": "The target application shares a high degree of similarity with the known benign applications, particularly in its use of common permissions such as ACCESS_COARSE_LOCATION, BIND_DEVICE_ADMIN, CALL_PHONE, DISABLE_KEYGUARD, GET_TASKS, and INTERNET. These permissions are also present in multiple benign apps listed above. The syscall evidence does not indicate any unusual or malicious behavior; instead, it includes a mix of system calls that are commonly used by legitimate applications for various purposes. Given the low base rate of malware (only 10% of applications) and the absence of distinctly harmful artifacts, the target application is best classified as benign."
+      },
+      {
+        "row_index": 1341,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "GET_TASKS",
+          "SYSTEM_ALERT_WINDOW",
+          "clock_gettime",
+          "clone"
+        ],
+        "grounded": [
+          "GET_TASKS",
+          "clock_gettime",
+          "clone"
+        ],
+        "egr": 0.75,
+        "cited_injected": [],
+        "reasoning": "The target application shares several artifacts with known malware, including GET_TASKS and SYSTEM_ALERT_WINDOW. Additionally, the presence of clock_gettime and clone in its syscall list further distinguishes it from the benign applications, which do not exhibit these specific behaviors. The high number of dangerous permissions requested also supports a malicious classification."
+      },
+      {
+        "row_index": 1346,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "BIND_DEVICE_ADMIN",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET",
+          "MODIFY_AUDIO_SETTINGS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "BIND_DEVICE_ADMIN",
+          "DISABLE_KEYGUARD",
+          "GET_TASKS",
+          "INTERNET",
+          "MODIFY_AUDIO_SETTINGS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD"
+        ],
+        "reasoning": "The target application shares a high degree of similarity with the known benign applications, particularly in its use of common permissions such as ACCESS_NETWORK_STATE, BIND_DEVICE_ADMIN, DISABLE_KEYGUARD, GET_TASKS, INTERNET, and MODIFY_AUDIO_SETTINGS. These permissions are frequently observed in the benign neighbors and do not inherently indicate malicious behavior on their own. The target application also exhibits a wide range of system calls that are consistent with typical benign applications, such as clock_gettime, ioctl, mprotect, and others. Given the low base rate of malware (only 10% of applications) and the absence of any distinctly alarming artifacts when compared to the known benign neighbors, it is reasonable to classify this application as benign."
+      },
+      {
+        "row_index": 1392,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "READ_EXTERNAL_STORAGE",
+          "WRITE_EXTERNAL_STORAGE",
+          "clock_gettime",
+          "futex"
+        ],
+        "grounded": [
+          "READ_EXTERNAL_STORAGE",
+          "WRITE_EXTERNAL_STORAGE",
+          "clock_gettime",
+          "futex"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with the known benign applications, as evidenced by the presence of common permissions such as `READ_EXTERNAL_STORAGE` and `WRITE_EXTERNAL_STORAGE`, which are also found in all the provided benign apps. Additionally, the syscall `clock_gettime` and `futex` are present in multiple benign neighbors, further supporting a benign classification. The target application does not exhibit any dangerous permissions or unique syscalls that distinguish it as malware compared to its known benign counterparts."
+      },
+      {
+        "row_index": 1401,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "GET_TASKS",
+          "READ_PHONE_STATE",
+          "VIBRATE",
+          "WAKE_LOCK"
+        ],
+        "grounded": [
+          "GET_TASKS",
+          "READ_PHONE_STATE",
+          "VIBRATE",
+          "WAKE_LOCK"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares several common permissions and system calls with the known benign applications, such as GET_TASKS, READ_PHONE_STATE, VIBRATE, and WAKE_LOCK. These artifacts are also present in multiple of the known benign apps (e.g., [2], [3], [4], [5], [6]). The target application does not exhibit any dangerous permissions or system calls that distinguish it from the malware example provided ([1]), which has a higher similarity score but includes additional permissions and system calls. Given the low base rate of malware in this population, and the absence of distinguishing artifacts, the target is more likely to be benign."
+      },
+      {
+        "row_index": 1614,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_FINE_LOCATION",
+          "BIND_WALLPAPER",
+          "DISABLE_KEYGUARD",
+          "INTERNET",
+          "MODIFY_PHONE_STATE",
+          "READ_CONTACTS"
+        ],
+        "grounded": [
+          "ACCESS_FINE_LOCATION",
+          "BIND_WALLPAPER",
+          "DISABLE_KEYGUARD",
+          "INTERNET",
+          "MODIFY_PHONE_STATE",
+          "READ_CONTACTS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "DISABLE_KEYGUARD",
+          "MODIFY_PHONE_STATE",
+          "READ_CONTACTS"
+        ],
+        "reasoning": "The target application shares several common permissions and system calls with the known benign applications, such as ACCESS_FINE_LOCATION, BIND_WALLPAPER, DISABLE_KEYGUARD, INTERNET, MODIFY_PHONE_STATE, and READ_CONTACTS. These permissions are frequently found in legitimate applications and do not inherently indicate malicious behavior. The syscall ptrace is also observed, which can be used for debugging purposes but does not necessarily imply malice. Given the low similarity to known malware (0.49) and the high number of benign neighbors (5 out of 6), the target application aligns more closely with the characteristics of a benign application."
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+venv/
+.venv/
+data/raw/
+kronodroid/
+__pycache__/
+*.pyc
+.env
+.DS_Store
+Thumbs.db
+report/

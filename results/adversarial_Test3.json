@@ -1,0 +1,971 @@
+{
+  "split": "Test3",
+  "n_attacked": 158,
+  "budgets": {
+    "1": {
+      "evaded": 38,
+      "n": 158,
+      "evasion_rate": 0.24050632911392406,
+      "mean_proba": 0.7167506217956543
+    },
+    "2": {
+      "evaded": 52,
+      "n": 158,
+      "evasion_rate": 0.3291139240506329,
+      "mean_proba": 0.6274923086166382
+    },
+    "5": {
+      "evaded": 79,
+      "n": 158,
+      "evasion_rate": 0.5,
+      "mean_proba": 0.5044109225273132
+    },
+    "10": {
+      "evaded": 110,
+      "n": 158,
+      "evasion_rate": 0.6962025316455697,
+      "mean_proba": 0.34843242168426514
+    },
+    "20": {
+      "evaded": 120,
+      "n": 158,
+      "evasion_rate": 0.759493670886076,
+      "mean_proba": 0.2776761054992676
+    },
+    "40": {
+      "evaded": 127,
+      "n": 158,
+      "evasion_rate": 0.8037974683544303,
+      "mean_proba": 0.22624844312667847
+    }
+  },
+  "llm": {
+    "attack_budget": 1,
+    "n_tested": 38,
+    "llm_fooled": 37,
+    "llm_fooled_rate": 0.9736842105263158,
+    "llm_caught": 1,
+    "mean_egr": 1.0,
+    "mean_egr_when_fooled": 1.0,
+    "mean_egr_when_caught": 1.0,
+    "explanations_citing_injected": 2,
+    "records": [
+      {
+        "row_index": 132,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 142,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 191,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 249,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile is more consistent with a benign application that requires typical permissions for functionality and does not exhibit behavior indicative of malware."
+      },
+      {
+        "row_index": 289,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 344,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 420,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 490,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 561,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 565,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application does not exhibit any distinctly malicious artifacts that differentiate it from the known malware family in the provided list. The majority of its system calls are also common and do not indicate suspicious activity. Given the low base rate of malware (10%) and the strong similarity to known benign apps, we can confidently classify this as benign."
+      },
+      {
+        "row_index": 567,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 596,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 679,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 738,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 954,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 1015,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 1025,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 1048,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 1058,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 1067,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 1178,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_CONTACTS",
+          "READ_EXTERNAL_STORAGE",
+          "READ_PHONE_STATE",
+          "READ_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_CONTACTS",
+          "READ_EXTERNAL_STORAGE",
+          "READ_PHONE_STATE",
+          "READ_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "READ_CONTACTS"
+        ],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_CONTACTS`, `READ_EXTERNAL_STORAGE`, `READ_PHONE_STATE`, and `READ_SMS` aligns closely with the known benign apps. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, `futex`, and others, does not exhibit any distinguishing characteristics that would suggest malicious intent. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given the high proportion of benign neighbors (5 out of 6), the target application is more likely to be benign."
+      },
+      {
+        "row_index": 1333,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 1347,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 1411,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 1710,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "READ_CONTACTS",
+          "READ_PHONE_STATE",
+          "RECEIVE_SMS",
+          "clock_gettime",
+          "getuid32",
+          "ioctl"
+        ],
+        "grounded": [
+          "READ_CONTACTS",
+          "READ_PHONE_STATE",
+          "RECEIVE_SMS",
+          "clock_gettime",
+          "getuid32",
+          "ioctl"
+        ],
+        "egr": 1.0,
+        "cited_injected": [
+          "READ_CONTACTS"
+        ],
+        "reasoning": "The target application shares several common permissions and system calls with the known benign applications, such as READ_CONTACTS, READ_PHONE_STATE, RECEIVE_SMS, clock_gettime, getuid32, and ioctl. These artifacts are consistent with a non-malicious application's behavior. Additionally, the absence of highly dangerous permissions (like those for modifying system settings or accessing sensitive data) further supports the classification of this application as benign. The low similarity score compared to known malware also suggests that the target is more likely to be benign."
+      },
+      {
+        "row_index": 1840,
+        "y_true": 1,
+        "llm_verdict": 1,
+        "cited": [
+          "ACCESS_FINE_LOCATION",
+          "CHANGE_WIFI_STATE",
+          "GET_TASKS",
+          "INTERNET",
+          "READ_EXTERNAL_STORAGE",
+          "READ_PHONE_STATE"
+        ],
+        "grounded": [
+          "ACCESS_FINE_LOCATION",
+          "CHANGE_WIFI_STATE",
+          "GET_TASKS",
+          "INTERNET",
+          "READ_EXTERNAL_STORAGE",
+          "READ_PHONE_STATE"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares several permissions with known malware families, including ACCESS_FINE_LOCATION, CHANGE_WIFI_STATE, GET_TASKS, INTERNET, READ_EXTERNAL_STORAGE, and READ_PHONE_STATE. These permissions are also common in the known malware apps (DroidKungFu, Hispo, Cosha, Robtes) but less frequently seen in benign applications. Additionally, the target application has a high number of distinct system calls, which could indicate more complex or potentially malicious behavior. Given that 5 out of 6 nearest known apps are malware and only one is benign, this further supports the likelihood that the target application is also malware."
+      },
+      {
+        "row_index": 1899,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 1923,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 2010,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 2154,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 2327,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 2429,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 2546,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      },
+      {
+        "row_index": 2580,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 2621,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 2635,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 2641,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly in its requested permissions and system calls. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` is consistent with the behavior of typical benign applications. Additionally, the target application's system call usage, including `clock_gettime`, `ioctl`, and `write`, does not exhibit any distinctly malicious patterns when compared to the known benign neighbors. The low number of dangerous permissions (6 out of 12) further supports a benign classification. Given that only one out of six nearest known apps is malware, and considering the overall base rate where only about 10% of applications are malware, the evidence strongly suggests this application is benign."
+      },
+      {
+        "row_index": 2801,
+        "y_true": 1,
+        "llm_verdict": 0,
+        "cited": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "grounded": [
+          "ACCESS_NETWORK_STATE",
+          "INTERNET",
+          "READ_PHONE_STATE",
+          "READ_SMS",
+          "RECEIVE_BOOT_COMPLETED",
+          "RECEIVE_SMS"
+        ],
+        "egr": 1.0,
+        "cited_injected": [],
+        "reasoning": "The target application shares a high degree of similarity with known benign applications, particularly those that request similar permissions and exhibit comparable system call behavior. The presence of common permissions such as `ACCESS_NETWORK_STATE`, `INTERNET`, `READ_PHONE_STATE`, `READ_SMS`, `RECEIVE_BOOT_COMPLETED`, and `RECEIVE_SMS` aligns closely with the known benign apps in the dataset. Additionally, the target application's system calls, while extensive, do not include any distinctly malicious artifacts observed in the malware examples provided (such as `BIND_DEVICE_ADMIN`). The overall artifact profile of the target is more consistent with a benign application than with the malware examples given."
+      }
+    ]
+  }
+}

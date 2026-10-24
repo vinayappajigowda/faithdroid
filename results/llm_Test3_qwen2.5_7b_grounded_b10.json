@@ -1,0 +1,567 @@
+{
+  "split": "Test3",
+  "model": "qwen2.5:7b",
+  "mode": "grounded",
+  "budget": 0.1,
+  "n_escalated": 20,
+  "n_total": 2848,
+  "wall_clock_s": 64.5,
+  "n_cached": 0,
+  "records": [
+    {
+      "row_index": 388,
+      "sha256": "00963d29e25c3455fc35383c688e73d24beeaad0c3eb89f6fa88160ce85d6b00",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "FOREGROUND_SERVICE",
+        "INTERNET",
+        "READ_PHONE_STATE"
+      ],
+      "grounded": [
+        "WRITE_EXTERNAL_STORAGE",
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "FOREGROUND_SERVICE",
+        "INTERNET",
+        "READ_PHONE_STATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 33,
+      "egr": 1.0,
+      "reasoning": "The application requests several permissions that are typically associated with malicious behavior, such as `WRITE_EXTERNAL_STORAGE`, `ACCESS_NETWORK_STATE`, and `ACCESS_WIFI_STATE`. Additionally, the high number of distinct system calls (`distinct_syscalls=6774`) suggests complex or potentially harmful operations. The presence of `FOREGROUND_SERVICE` and `INTERNET` permissions also indicates that the app could be designed to run in the foreground and perform network-related activities, which are common in malware for data exfiltration or command-and-control communications.",
+      "latency_s": 5.59,
+      "eval_count": 171,
+      "prompt_eval_count": 326
+    },
+    {
+      "row_index": 1392,
+      "sha256": "6896f2092fd25d9f7d171f3a58403cf9543193ca8a1ae34b8820e35074aada2b",
+      "family": "Boogr",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "CALL_PHONE",
+        "SEND_SMS",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "grounded": [
+        "CALL_PHONE",
+        "SEND_SMS",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 32,
+      "egr": 1.0,
+      "reasoning": "The application requests permissions to access sensitive information such as the user's phone number and send SMS messages, which are typically associated with malicious activities. Additionally, it writes to external storage, potentially allowing unauthorized data exfiltration or installation of additional malware components.",
+      "latency_s": 2.05,
+      "eval_count": 94,
+      "prompt_eval_count": 315
+    },
+    {
+      "row_index": 2809,
+      "sha256": "8687d34f44c64b1ccd12e9c3967ce8ace4c1e03c9f906569f5fc1721ff645248",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "RECORD_AUDIO",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "VIBRATE"
+      ],
+      "grounded": [
+        "RECORD_AUDIO",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "VIBRATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 45,
+      "egr": 1.0,
+      "reasoning": "The application requests permissions to access sensitive user data such as audio recording and biometric information, which are typically associated with malicious behavior. Additionally, the presence of `VIBRATE` permission could be used for stealthy notifications or other covert activities. The high number of requested permissions (23 total) and dangerous permissions (4 dangerous), along with the observed system calls related to memory management and network operations, further suggest that this application may have malicious intent.",
+      "latency_s": 3.06,
+      "eval_count": 146,
+      "prompt_eval_count": 376
+    },
+    {
+      "row_index": 839,
+      "sha256": "687518d2ba223a2d10d1389f025ae45f36ab7e01c9a668e834e2437a578e7074",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "INSTALL_PACKAGES",
+        "RECORD_AUDIO",
+        "VIBRATE"
+      ],
+      "grounded": [
+        "INSTALL_PACKAGES",
+        "RECORD_AUDIO",
+        "VIBRATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 33,
+      "egr": 1.0,
+      "reasoning": "The application requests permissions to install packages, record audio, and vibrate the device. These permissions are often associated with malicious behavior as they can be used to spread malware or spy on the user without their consent. Additionally, the high number of distinct system calls (7005) and services (13) observed suggests complex and potentially harmful operations being performed by the application.",
+      "latency_s": 2.53,
+      "eval_count": 122,
+      "prompt_eval_count": 322
+    },
+    {
+      "row_index": 1093,
+      "sha256": "773ca5f111bb2587e98aaab13fc8fa3570edeb44a88cc44f0dae18b52b350928",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "BIND_AUTOFILL_SERVICE",
+        "As this permission is often used by malware to intercept and manipulate user data, it suggests potential malicious intent.",
+        "USE_BIOMETRIC",
+        "While biometric permissions can be legitimate, their use in conjunction with other suspicious activities could indicate a threat.",
+        "WRITE_EXTERNAL_STORAGE",
+        "This permission allows the app to write to external storage, which is common for malware to exfiltrate data or install additional components."
+      ],
+      "grounded": [
+        "BIND_AUTOFILL_SERVICE",
+        "USE_BIOMETRIC",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "hallucinated": [
+        "As this permission is often used by malware to intercept and manipulate user data, it suggests potential malicious intent.",
+        "While biometric permissions can be legitimate, their use in conjunction with other suspicious activities could indicate a threat.",
+        "This permission allows the app to write to external storage, which is common for malware to exfiltrate data or install additional components."
+      ],
+      "n_allowed": 33,
+      "egr": 0.5,
+      "reasoning": "The presence of BIND_AUTOFILL_SERVICE and USE_BIOMETRIC permissions, combined with WRITE_EXTERNAL_STORAGE, suggests that this application may be attempting to intercept sensitive user information and potentially exfiltrate it. The extensive use of system calls such as clock_gettime, mprotect, read, ioctl, mmap2, prctl, futex, madvise, fstat64, getuid32, munmap, close, clone, pread, fcntl64, write, dup, rt_sigprocmask, writev, getdents64, epoll_ctl, gettimeofday, recvfrom, lseek, and fstatfs64 also indicates a high level of system interaction that is not typical for benign applications. These activities could be indicative of malicious behavior such as data theft or unauthorized access to the device's resources.",
+      "latency_s": 5.63,
+      "eval_count": 291,
+      "prompt_eval_count": 329
+    },
+    {
+      "row_index": 2153,
+      "sha256": "e549446aebb7938988df739ab8053b2da5119ac7382ebd282ece53c60aa40291",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "MODIFY_AUDIO_SETTINGS",
+        "SYSTEM_ALERT_WINDOW",
+        "MANAGE_OWN_CALLS",
+        "BIND_TELECOM_CONNECTION_SERVICE"
+      ],
+      "grounded": [
+        "MODIFY_AUDIO_SETTINGS",
+        "SYSTEM_ALERT_WINDOW",
+        "MANAGE_OWN_CALLS",
+        "BIND_TELECOM_CONNECTION_SERVICE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 38,
+      "egr": 1.0,
+      "reasoning": "The application requests a high number of permissions, including sensitive ones such as MODIFY_AUDIO_SETTINGS and SYSTEM_ALERT_WINDOW. Additionally, it binds to the telecom connection service, which could be used for malicious purposes like intercepting calls or sending SMS without user consent. The combination of these permissions and system-level access suggests that this app may have malicious intent.",
+      "latency_s": 2.66,
+      "eval_count": 127,
+      "prompt_eval_count": 351
+    },
+    {
+      "row_index": 1597,
+      "sha256": "48492c8dc5ce23f03a121aef486cc57d3e16889ef1e584040e0903b4bf7b20f8",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "RECEIVE_SMS",
+        "SEND_SMS",
+        "WRITE_EXTERNAL_STORAGE",
+        "VIBRATE",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "grounded": [
+        "RECEIVE_SMS",
+        "SEND_SMS",
+        "WRITE_EXTERNAL_STORAGE",
+        "VIBRATE",
+        "ACCESS_FINE_LOCATION"
+      ],
+      "hallucinated": [],
+      "n_allowed": 39,
+      "egr": 1.0,
+      "reasoning": "The application requests permissions to access sensitive user data such as SMS and location, which are typically associated with malicious behavior. Additionally, the ability to send SMS messages could be used for spam or other harmful activities. The permission to write to external storage can also be exploited to spread malware or steal data. Furthermore, the high number of system calls observed suggests complex interactions that may indicate an attempt to evade detection or perform unauthorized actions.",
+      "latency_s": 2.98,
+      "eval_count": 142,
+      "prompt_eval_count": 347
+    },
+    {
+      "row_index": 2087,
+      "sha256": "965ce7acd76283ef29c5a3ce575dee0a9beb04afdaf28116831f9bca4e26ff9d",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "INTERNET"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE",
+        "INTERNET"
+      ],
+      "hallucinated": [],
+      "n_allowed": 28,
+      "egr": 1.0,
+      "reasoning": "The application requests permissions related to network and internet access, which are common for many legitimate applications. The syscall list includes a variety of system calls that are frequently used by benign applications for standard operations such as file I/O, process management, and networking. There are no dangerous permissions or suspicious syscalls present in the evidence provided.",
+      "latency_s": 2.39,
+      "eval_count": 111,
+      "prompt_eval_count": 301
+    },
+    {
+      "row_index": 276,
+      "sha256": "7ae5547f998b44fd577a61fd8c4d83b82622aa34234824f59e77e91b9aeb03d8",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "FOREGROUND_SERVICE",
+        "INTERNET",
+        "RECEIVE_BOOT_COMPLETED",
+        "SYSTEM_ALERT_WINDOW"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "FOREGROUND_SERVICE",
+        "INTERNET",
+        "RECEIVE_BOOT_COMPLETED",
+        "SYSTEM_ALERT_WINDOW"
+      ],
+      "hallucinated": [],
+      "n_allowed": 29,
+      "egr": 1.0,
+      "reasoning": "Based on the provided evidence, the application requests common permissions such as network access and internet connectivity. These are typical for many legitimate applications that require these functionalities to operate properly. Additionally, the syscall list includes standard system calls like `clock_gettime`, `getuid32`, and `ioctl`, which are commonly used by benign applications for various operations. The lack of dangerous permissions and a large number of distinct syscalls suggest that this application is likely performing legitimate functions rather than malicious activities.",
+      "latency_s": 3.16,
+      "eval_count": 157,
+      "prompt_eval_count": 305
+    },
+    {
+      "row_index": 2464,
+      "sha256": "761977916bdfe4871c680c8067a23f88a3708cad55e5275bd35414f84e6e61d3",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "SYSTEM_ALERT_WINDOW",
+        "RECEIVE_BOOT_COMPLETED",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "grounded": [
+        "ACCESS_FINE_LOCATION",
+        "CAMERA",
+        "SYSTEM_ALERT_WINDOW",
+        "RECEIVE_BOOT_COMPLETED",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 43,
+      "egr": 1.0,
+      "reasoning": "The application requests a high number of permissions, including sensitive ones like ACCESS_FINE_LOCATION and SYSTEM_ALERT_WINDOW. Additionally, it has the ability to receive boot completed events (RECEIVE_BOOT_COMPLETED), which can be used for malicious purposes such as starting services at system startup without user knowledge. The WRITE_EXTERNAL_STORAGE permission allows the app to modify files on the device, potentially leading to data theft or other harmful activities.",
+      "latency_s": 3.01,
+      "eval_count": 141,
+      "prompt_eval_count": 367
+    },
+    {
+      "row_index": 2311,
+      "sha256": "5ab83083d0409575d4e2b9b6366c2fef5b9ec7b1f56c8acc50600e5d85e05501",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "ACCESS_FINE_LOCATION",
+        "WRITE_EXTERNAL_STORAGE",
+        "mmap2",
+        "writev",
+        "clone",
+        "epoll_ctl"
+      ],
+      "grounded": [
+        "ACCESS_FINE_LOCATION",
+        "WRITE_EXTERNAL_STORAGE",
+        "mmap2",
+        "writev",
+        "clone",
+        "epoll_ctl"
+      ],
+      "hallucinated": [],
+      "n_allowed": 33,
+      "egr": 1.0,
+      "reasoning": "The application requests several dangerous permissions such as ACCESS_FINE_LOCATION and WRITE_EXTERNAL_STORAGE, which can be used to track user locations or modify files on the device. Additionally, the observed system calls like mmap2 and writev indicate potential malicious activities, such as memory manipulation or file operations that could be used for hiding data or evading detection. The use of low-level system calls like clone and epoll_ctl also suggests sophisticated behavior that is often associated with malware to maintain persistence or evade analysis.",
+      "latency_s": 3.15,
+      "eval_count": 157,
+      "prompt_eval_count": 324
+    },
+    {
+      "row_index": 974,
+      "sha256": "f8c22b2e08edbeee263aa900985c92e3701939c9f21336000d096541878e24ef",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "INSTALL_PACKAGES",
+        "BIND_TELECOM_CONNECTION_SERVICE",
+        "CALL_PHONE",
+        "MODIFY_AUDIO_SETTINGS",
+        "MANAGE_OWN_CALLS"
+      ],
+      "grounded": [
+        "INSTALL_PACKAGES",
+        "BIND_TELECOM_CONNECTION_SERVICE",
+        "CALL_PHONE",
+        "MODIFY_AUDIO_SETTINGS",
+        "MANAGE_OWN_CALLS"
+      ],
+      "hallucinated": [],
+      "n_allowed": 50,
+      "egr": 1.0,
+      "reasoning": "The application requests dangerous permissions such as INSTALL_PACKAGES, which allows the app to install other apps without user consent. Additionally, it has the ability to BIND_TELECOM_CONNECTION_SERVICE and CALL_PHONE, which can be used for malicious purposes like making unauthorized calls or sending SMS messages. The permission MODIFY_AUDIO_SETTINGS could also be exploited to eavesdrop on conversations. These permissions combined with the observed system calls suggest that this application is likely designed to perform malicious activities.",
+      "latency_s": 3.24,
+      "eval_count": 156,
+      "prompt_eval_count": 407
+    },
+    {
+      "row_index": 1620,
+      "sha256": "073a922a98130d1bc2d433ce6806236c73bee46c05ce28efebf57b4707790861",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "RECORD_AUDIO",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "VIBRATE"
+      ],
+      "grounded": [
+        "RECORD_AUDIO",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "VIBRATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 45,
+      "egr": 1.0,
+      "reasoning": "The application requests permissions to access sensitive user data such as audio recording and biometric information, which are typically associated with malicious behavior. Additionally, the presence of `VIBRATE` permission could be used for stealthy notifications or other covert activities. The high number of requested permissions (23) and dangerous permissions (4) further suggests a potential risk to the user's privacy and device security.",
+      "latency_s": 2.74,
+      "eval_count": 134,
+      "prompt_eval_count": 375
+    },
+    {
+      "row_index": 2787,
+      "sha256": "4b238c8c4cba85f3c93cb364f1d8a38c27333252e53286999555db9de0073677",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "MODIFY_AUDIO_SETTINGS",
+        "RECORD_AUDIO",
+        "READ_PHONE_STATE",
+        "CAMERA",
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE"
+      ],
+      "grounded": [
+        "MODIFY_AUDIO_SETTINGS",
+        "RECORD_AUDIO",
+        "READ_PHONE_STATE",
+        "CAMERA",
+        "ACCESS_NETWORK_STATE",
+        "ACCESS_WIFI_STATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 50,
+      "egr": 1.0,
+      "reasoning": "The application requests a high number of dangerous permissions, including the ability to modify audio settings and record audio, which can be used for eavesdropping. Additionally, it has access to sensitive information such as phone state and camera functionality. The extensive use of system calls, particularly those related to network and file operations, also raises concerns about potential malicious activities.",
+      "latency_s": 2.91,
+      "eval_count": 135,
+      "prompt_eval_count": 404
+    },
+    {
+      "row_index": 980,
+      "sha256": "440632c81876de2ac318dff93eb7435e1bc5ba459979b240c150e0466ebab429",
+      "family": "BankBot",
+      "y_true": 1,
+      "llm_verdict": 1,
+      "cited": [
+        "BIND_ACCESSIBILITY_SERVICE",
+        "BIND_DEVICE_ADMIN",
+        "RECEIVE_BOOT_COMPLETED",
+        "SEND_SMS",
+        "REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+      ],
+      "grounded": [
+        "BIND_ACCESSIBILITY_SERVICE",
+        "BIND_DEVICE_ADMIN",
+        "RECEIVE_BOOT_COMPLETED",
+        "SEND_SMS",
+        "REQUEST_IGNORE_BATTERY_OPTIMIZATIONS"
+      ],
+      "hallucinated": [],
+      "n_allowed": 44,
+      "egr": 1.0,
+      "reasoning": "The application requests a high number of dangerous permissions, including BIND_ACCESSIBILITY_SERVICE and BIND_DEVICE_ADMIN, which allow the app to perform sensitive actions on behalf of the user. Additionally, it has the ability to send SMS messages (SEND_SMS) without user consent, which is a common characteristic of malware. The permission REQUEST_IGNORE_BATTERY_OPTIMIZATIONS also suggests that the application may run in the background and consume resources even when not actively used by the user. These permissions and capabilities are indicative of malicious behavior.",
+      "latency_s": 3.46,
+      "eval_count": 167,
+      "prompt_eval_count": 381
+    },
+    {
+      "row_index": 775,
+      "sha256": "ec4826f7d0cdca1990c1312eb4903d457bee1c2dcd4bb0bd10d89d2674f9dc1c",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "FOREGROUND_SERVICE",
+        "INTERNET",
+        "RECEIVE_BOOT_COMPLETED",
+        "SYSTEM_ALERT_WINDOW"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "FOREGROUND_SERVICE",
+        "INTERNET",
+        "RECEIVE_BOOT_COMPLETED",
+        "SYSTEM_ALERT_WINDOW"
+      ],
+      "hallucinated": [],
+      "n_allowed": 29,
+      "egr": 1.0,
+      "reasoning": "Based on the provided evidence, the application requests common permissions such as network state access, foreground service, internet usage, and system alert window. These permissions are often requested by legitimate applications to function properly. Additionally, the syscall list includes a mix of standard syscalls that do not necessarily indicate malicious behavior. The lack of dangerous permissions and the presence of intent filters and services suggest that this application is likely intended for normal functionality rather than malicious purposes.",
+      "latency_s": 3.04,
+      "eval_count": 149,
+      "prompt_eval_count": 305
+    },
+    {
+      "row_index": 1515,
+      "sha256": "1088d5471b5344a14541f5954f8cc97f45b5614bd5b31b5a8c0838a9a8a20d6a",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "MODIFY_AUDIO_SETTINGS",
+        "RECORD_AUDIO",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT"
+      ],
+      "grounded": [
+        "MODIFY_AUDIO_SETTINGS",
+        "RECORD_AUDIO",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT"
+      ],
+      "hallucinated": [],
+      "n_allowed": 44,
+      "egr": 1.0,
+      "reasoning": "The application requests permissions to modify audio settings and record audio, as well as use biometric sensors such as fingerprint. These permissions are often associated with malware that may be used for eavesdropping or stealing sensitive information. Additionally, the high number of requested permissions (19 out of 19 shown) and distinct system calls (8586) suggest a complex application that could potentially perform malicious activities.",
+      "latency_s": 3.05,
+      "eval_count": 139,
+      "prompt_eval_count": 371
+    },
+    {
+      "row_index": 1724,
+      "sha256": "ac1b45b3faed83784776b4826d5d698355af34bc2c18d0ef18db1c0b8b8db665",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "grounded": [
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 27,
+      "egr": 1.0,
+      "reasoning": "The application requests WRITE_EXTERNAL_STORAGE permission, which is often used by malware to spread or exfiltrate data from the device. While this alone does not definitively indicate malicious intent, it is a common red flag in the context of Android apps. Additionally, the high number of distinct system calls (553) and the presence of network-related syscalls such as `recvfrom` suggest that the app may be communicating with external servers, which could be used for command-and-control or data exfiltration purposes.",
+      "latency_s": 2.99,
+      "eval_count": 137,
+      "prompt_eval_count": 296
+    },
+    {
+      "row_index": 369,
+      "sha256": "b4fdbbaf2076c7a2e4a69aa1079e39e53c9b13dc7baf2f62ede6c5de0ff1a4ec",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 0,
+      "cited": [
+        "ACCESS_NETWORK_STATE",
+        "FOREGROUND_SERVICE",
+        "INTERNET",
+        "RECEIVE_BOOT_COMPLETED",
+        "SYSTEM_ALERT_WINDOW"
+      ],
+      "grounded": [
+        "ACCESS_NETWORK_STATE",
+        "FOREGROUND_SERVICE",
+        "INTERNET",
+        "RECEIVE_BOOT_COMPLETED",
+        "SYSTEM_ALERT_WINDOW"
+      ],
+      "hallucinated": [],
+      "n_allowed": 29,
+      "egr": 1.0,
+      "reasoning": "Based on the provided evidence, the application requests common permissions such as network access and internet connectivity. These are typical for many legitimate applications that require these functionalities to operate properly. Additionally, the syscall list includes standard system calls like `clock_gettime`, `getuid32`, and `ioctl`, which are commonly used by benign applications for various operations. The lack of dangerous permissions and a large number of distinct syscalls suggest that this application is likely performing legitimate functions rather than malicious activities.",
+      "latency_s": 3.46,
+      "eval_count": 157,
+      "prompt_eval_count": 305
+    },
+    {
+      "row_index": 787,
+      "sha256": "650510c034886f16da81efc14f6a48605bda681c814c60a1787fc6a3d2376320",
+      "family": "None",
+      "y_true": 0,
+      "llm_verdict": 1,
+      "cited": [
+        "RECORD_AUDIO",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "VIBRATE"
+      ],
+      "grounded": [
+        "RECORD_AUDIO",
+        "USE_BIOMETRIC",
+        "USE_FINGERPRINT",
+        "VIBRATE"
+      ],
+      "hallucinated": [],
+      "n_allowed": 45,
+      "egr": 1.0,
+      "reasoning": "The application requests permissions to access sensitive user data such as audio recording and biometric information, which are typically associated with malicious behavior. Additionally, the presence of `VIBRATE` permission could be used for stealthy notifications or other covert activities. The high number of requested permissions (23 total, 4 dangerous) and the invocation of system calls related to memory management (`mprotect`, `mmap2`, `munmap`) and network operations (`recvfrom`, `writev`) also suggest potential malicious intent.",
+      "latency_s": 3.35,
+      "eval_count": 159,
+      "prompt_eval_count": 375
+    }
+  ],
+  "llm_only_on_escalated": {
+    "n": 20,
+    "accuracy": 25.0,
+    "precision": 6.25,
+    "recall": 100.0,
+    "f1": 11.76470588235294,
+    "fpr": 78.94736842105263,
+    "fnr": 0.0,
+    "tp": 1,
+    "tn": 4,
+    "fp": 15,
+    "fn": 0
+  },
+  "mean_egr": 0.975,
+  "fully_grounded_rate": 0.95,
+  "mean_latency_s": 3.2225
+}
